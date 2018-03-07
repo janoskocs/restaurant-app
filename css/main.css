@@ -1,0 +1,109 @@
+@keyframes bouncing {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .startPageWrapper {
+  background: linear-gradient(rgba(25, 98, 141, 0.7), rgba(242, 67, 100, 0.1)), url("../img/hero1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+body .startPageWrapper .welcomeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body .startPageWrapper .welcomeWrapper h1 {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 3.4rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 23vh;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+body .startPageWrapper .welcomeWrapper .userName {
+  display: inline;
+  padding: 3vh;
+  visibility: hidden;
+  transition: .3 ease;
+}
+
+body .startPageWrapper .welcomeWrapper .userName:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+body .startPageWrapper .welcomeWrapper .userName:hover:after {
+  transform: scaleX(1);
+}
+
+body .startPageWrapper .welcomeWrapper .userName input {
+  font-family: 'Righteous', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  padding: 2vh;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+body .startPageWrapper .welcomeWrapper .userName ::placeholder {
+  color: #19628d;
+  opacity: 1;
+}
+
+body .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+  color: #d86337;
+}
+
+body .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+  color: #d86337;
+}
+
+body .startPageWrapper button {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  border: none;
+  background: none;
+  padding: 1.5rem;
+  outline: none;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  animation: bouncing 1s 2s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+body .startPageWrapper button:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #fff;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+body .startPageWrapper button:hover:after {
+  transform: scaleX(1);
+}
+/*# sourceMappingURL=main.css.map */

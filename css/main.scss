@@ -1,0 +1,78 @@
+@import "vars";
+@import "mixins";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    .startPageWrapper {
+        background: 
+            linear-gradient( rgba(25, 98, 141, 0.7), rgba(242, 67, 100, 0.1)), 
+            url('../img/hero1280.jpg');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        .welcomeWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h1 {
+                @include main-font(3.4rem, $main-color);
+                padding-top: 23vh;
+                text-shadow: 0px 2px 20px $accent-orange; //0 0 5px #0000FF;
+            }
+            .userName {
+                display: inline;
+                padding: 3vh;
+                visibility: hidden;
+                transition: .3 ease;
+                &:after {
+                    @include border-bottom-expand;
+                }
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+                input {
+                    @include general-font(2rem, $accent-color);
+                    padding: 2vh;
+                    border: none;
+                    background: none;
+                    outline: none;
+                }
+                //PLACEHOLDER COLORS!
+                ::placeholder {
+                    color: $blue;
+                    opacity: 1;
+                }
+                :-ms-input-placeholder { 
+                    color: $accent-orange;
+                }
+                :-ms-input-placeholder {
+                     color: $accent-orange;
+                }//PLACEHOLDER COLORS!
+            }
+        }//.welcomeWrapper
+       
+        button {
+            @include general-font(1.5rem, $accent-color);
+            @include general-button(1.5rem);
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            animation: bouncing 1s 2s ease-in-out;
+            animation-iteration-count: 3;
+            &:after {
+                @include border-bottom-expand;
+            }
+            &:hover:after {
+                transform: scaleX(1);
+            }
+        }//button
+    }//.startPageWrapper
+}//BODY
