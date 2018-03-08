@@ -17,10 +17,11 @@
 }
 
 body .startPageWrapper {
-  background: linear-gradient(rgba(25, 98, 141, 0.7), rgba(242, 67, 100, 0.1)), url("../img/hero1280.jpg");
+  background: linear-gradient(rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), url("../img/hero1280.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  text-align: center;
 }
 
 body .startPageWrapper .welcomeWrapper {
@@ -41,7 +42,6 @@ body .startPageWrapper .welcomeWrapper h1 {
 body .startPageWrapper .welcomeWrapper .userName {
   display: inline;
   padding: 3vh;
-  visibility: hidden;
   transition: .3 ease;
 }
 
@@ -80,6 +80,16 @@ body .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
   color: #d86337;
 }
 
+body .startPageWrapper #errorDiv .errorMessage {
+  width: 50vw;
+  padding: 2rem;
+  margin: 0 auto;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.1rem;
+  color: #cc0000;
+  background: rgba(255, 255, 255, 0.5);
+}
+
 body .startPageWrapper button {
   font-family: 'Righteous', sans-serif;
   font-size: 1.5rem;
@@ -88,11 +98,8 @@ body .startPageWrapper button {
   background: none;
   padding: 1.5rem;
   outline: none;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  animation: bouncing 1s 2s ease-in-out;
-  animation-iteration-count: 3;
+  text-align: center;
+  margin-top: 4vh;
 }
 
 body .startPageWrapper button:after {
@@ -105,5 +112,18 @@ body .startPageWrapper button:after {
 
 body .startPageWrapper button:hover:after {
   transform: scaleX(1);
+}
+
+body .bookPageWrapper {
+  background-color: #d98592;
+}
+
+body .bookPageWrapper nav {
+  display: flex;
+  align-items: center;
+}
+
+body .bookPageWrapper nav img {
+  width: 7vw;
 }
 /*# sourceMappingURL=main.css.map */

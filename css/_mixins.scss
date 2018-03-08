@@ -20,6 +20,7 @@
     background: none;
     padding: $padding;
     outline: none;
+    text-align: center;
 }
 @mixin border-bottom-expand () {
     display: block;
