@@ -18,12 +18,24 @@ body #appFrame .startPageWrapper .welcomeWrapper {
   align-items: center;
 }
 
+body #appFrame .startPageWrapper .welcomeWrapper img {
+  width: 7rem;
+}
+
 body #appFrame .startPageWrapper .welcomeWrapper h1 {
   font-family: 'Permanent Marker', sans-serif;
   font-size: 3.4rem;
   color: #fff;
   text-align: center;
-  padding-top: 23vh;
+  padding-top: 5vh;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+body #appFrame .startPageWrapper .welcomeWrapper p {
+  font-family: 'Righteous', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  padding: 1vh;
   text-shadow: 0px 2px 20px #d86337;
 }
 
@@ -36,7 +48,7 @@ body #appFrame .startPageWrapper .welcomeWrapper .userName {
 body #appFrame .startPageWrapper .welcomeWrapper .userName:after {
   display: block;
   content: '';
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px #FF69B4;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -48,7 +60,7 @@ body #appFrame .startPageWrapper .welcomeWrapper .userName:hover:after {
 body #appFrame .startPageWrapper .welcomeWrapper .userName input {
   font-family: 'Righteous', sans-serif;
   font-size: 2rem;
-  color: #fff;
+  color: #FF69B4;
   padding: 4vh;
   border: none;
   background: none;
@@ -93,7 +105,7 @@ body #appFrame .startPageWrapper button {
 body #appFrame .startPageWrapper button:after {
   display: block;
   content: '';
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px #FF69B4;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }

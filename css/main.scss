@@ -23,10 +23,18 @@ body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                img {
+                    width: 7rem;
+                }
                 h1 {
                     @include main-font(3.4rem, $main-color);
-                    padding-top: 23vh;
+                    padding-top: 5vh;
                     text-shadow: 0px 2px 20px $accent-orange; //0 0 5px #0000FF
+                }
+                p {
+                    @include general-font(2rem, $main-color);
+                    padding: 1vh;
+                    text-shadow: 0px 2px 20px $accent-orange;
                     
                 }
                 .userName {
@@ -71,7 +79,7 @@ body {
             }
            
             button {
-                @include general-font(1.5rem, $accent-color);
+                @include general-font(1.5rem, $main-color);
                 @include general-button(1.5rem);
                 margin-top: 4vh;
                 &:after {

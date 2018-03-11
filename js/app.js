@@ -8,6 +8,12 @@ function selector(element) {
     return document.querySelector(element);
 }
 
+function render(htmlMarkup) {
+    let appFrame = selector("#appFrame").innerHTML = htmlMarkup;
+}
+
+render(welcome);
+
 function nameInput() {
     userSetting["name"] = selector("#userNameInput").value.toLowerCase();
 
