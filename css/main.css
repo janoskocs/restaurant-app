@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 body #appFrame .startPageWrapper {
   background: linear-gradient(rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), url("../img/hero1280.jpg");
   background-repeat: no-repeat;
@@ -73,11 +77,11 @@ body #appFrame .startPageWrapper .welcomeWrapper .userName ::placeholder {
 }
 
 body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
-  color: #d86337;
+  color: #228cda;
 }
 
 body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
-  color: #d86337;
+  color: #228cda;
 }
 
 body #appFrame .startPageWrapper #errorDiv .errorMessage {
@@ -112,6 +116,56 @@ body #appFrame .startPageWrapper button:after {
 
 body #appFrame .startPageWrapper button:hover:after {
   transform: scaleX(1);
+}
+
+body #appFrame .startPageWrapper .steps {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+body #appFrame .startPageWrapper .steps p {
+  margin: 1rem;
+}
+
+body #appFrame .startPageWrapper .tableCount input {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 4vh;
+  background: rgba(25, 98, 141, 0.5);
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+body #appFrame .startPageWrapper .tableCount input:hover {
+  box-shadow: 0 3px 7px #d98592;
+}
+
+body #appFrame .startPageWrapper .tableCount input #errorDiv .errorMessage {
+  width: 20vw;
+  padding: 0.2rem;
+  margin: 0 auto;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.1rem;
+  color: #cc0000;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body #appFrame .startPageWrapper .tableCount ::placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+body #appFrame .startPageWrapper .tableCount :-ms-input-placeholder {
+  color: #228cda;
+}
+
+body #appFrame .startPageWrapper .tableCount :-ms-input-placeholder {
+  color: #228cda;
 }
 
 body #appFrame .bookPageWrapper {

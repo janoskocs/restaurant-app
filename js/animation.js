@@ -10,4 +10,4 @@ function fadeIn() {
         clearInterval();
     }
 }
-setInterval(fadeIn, 15);
+//setInterval(fadeIn, 15);
