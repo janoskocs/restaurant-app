@@ -1,13 +1,16 @@
-
-let welcomeWrapper = selector(".welcomeWrapper");
-let opacity = 0;
-
-function fadeIn() {
-    welcomeWrapper.style.opacity = opacity;
-    opacity += 0.01;
-
-    if (opacity === 1) {
-        clearInterval();
+let body;
+/*
+function blur() {
+    body = selector("body");
+    let blur = 5;
+    let id = setInterval(frame, 10);
+    function frame() {
+        if (blur === 0) {
+            clearInterval(id);
+        } else {
+            blur -= 0.1;
+            body.style.filter = "blur(" + blur + "px)";
+        }
     }
 }
-//setInterval(fadeIn, 15);
+*/
