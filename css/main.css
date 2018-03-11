@@ -1,22 +1,10 @@
-@keyframes bouncing {
-  0% {
-    bottom: 0;
-  }
-  50% {
-    bottom: 20px;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body .startPageWrapper {
+body #appFrame .startPageWrapper {
   background: linear-gradient(rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), url("../img/hero1280.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,13 +12,13 @@ body .startPageWrapper {
   text-align: center;
 }
 
-body .startPageWrapper .welcomeWrapper {
+body #appFrame .startPageWrapper .welcomeWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-body .startPageWrapper .welcomeWrapper h1 {
+body #appFrame .startPageWrapper .welcomeWrapper h1 {
   font-family: 'Permanent Marker', sans-serif;
   font-size: 3.4rem;
   color: #fff;
@@ -39,13 +27,13 @@ body .startPageWrapper .welcomeWrapper h1 {
   text-shadow: 0px 2px 20px #d86337;
 }
 
-body .startPageWrapper .welcomeWrapper .userName {
+body #appFrame .startPageWrapper .welcomeWrapper .userName {
   display: inline;
   padding: 3vh;
   transition: .3 ease;
 }
 
-body .startPageWrapper .welcomeWrapper .userName:after {
+body #appFrame .startPageWrapper .welcomeWrapper .userName:after {
   display: block;
   content: '';
   border-bottom: solid 2px #fff;
@@ -53,34 +41,34 @@ body .startPageWrapper .welcomeWrapper .userName:after {
   transition: transform 250ms ease-in-out;
 }
 
-body .startPageWrapper .welcomeWrapper .userName:hover:after {
+body #appFrame .startPageWrapper .welcomeWrapper .userName:hover:after {
   transform: scaleX(1);
 }
 
-body .startPageWrapper .welcomeWrapper .userName input {
+body #appFrame .startPageWrapper .welcomeWrapper .userName input {
   font-family: 'Righteous', sans-serif;
   font-size: 2rem;
   color: #fff;
-  padding: 2vh;
+  padding: 4vh;
   border: none;
   background: none;
   outline: none;
 }
 
-body .startPageWrapper .welcomeWrapper .userName ::placeholder {
-  color: #19628d;
+body #appFrame .startPageWrapper .welcomeWrapper .userName ::placeholder {
+  color: #228cda;
   opacity: 1;
 }
 
-body .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
   color: #d86337;
 }
 
-body .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
   color: #d86337;
 }
 
-body .startPageWrapper #errorDiv .errorMessage {
+body #appFrame .startPageWrapper #errorDiv .errorMessage {
   width: 50vw;
   padding: 2rem;
   margin: 0 auto;
@@ -90,7 +78,7 @@ body .startPageWrapper #errorDiv .errorMessage {
   background: rgba(255, 255, 255, 0.5);
 }
 
-body .startPageWrapper button {
+body #appFrame .startPageWrapper button {
   font-family: 'Righteous', sans-serif;
   font-size: 1.5rem;
   color: #fff;
@@ -102,7 +90,7 @@ body .startPageWrapper button {
   margin-top: 4vh;
 }
 
-body .startPageWrapper button:after {
+body #appFrame .startPageWrapper button:after {
   display: block;
   content: '';
   border-bottom: solid 2px #fff;
@@ -110,20 +98,20 @@ body .startPageWrapper button:after {
   transition: transform 250ms ease-in-out;
 }
 
-body .startPageWrapper button:hover:after {
+body #appFrame .startPageWrapper button:hover:after {
   transform: scaleX(1);
 }
 
-body .bookPageWrapper {
+body #appFrame .bookPageWrapper {
   background-color: #d98592;
 }
 
-body .bookPageWrapper nav {
+body #appFrame .bookPageWrapper nav {
   display: flex;
   align-items: center;
 }
 
-body .bookPageWrapper nav img {
+body #appFrame .bookPageWrapper nav img {
   width: 7vw;
 }
 /*# sourceMappingURL=main.css.map */

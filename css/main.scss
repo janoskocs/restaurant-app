@@ -9,89 +9,91 @@
 }
 
 body {
-
-    .startPageWrapper {
-        background: 
-            linear-gradient( rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), 
-            url('../img/hero1280.jpg');
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-        text-align: center;
-        .welcomeWrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            h1 {
-                @include main-font(3.4rem, $main-color);
-                padding-top: 23vh;
-                text-shadow: 0px 2px 20px $accent-orange; //0 0 5px #0000FF;
+    #appFrame {
+        .startPageWrapper {
+            background: 
+                linear-gradient( rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), 
+                url('../img/hero1280.jpg');
+    
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            text-align: center;
+            .welcomeWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h1 {
+                    @include main-font(3.4rem, $main-color);
+                    padding-top: 23vh;
+                    text-shadow: 0px 2px 20px $accent-orange; //0 0 5px #0000FF
+                    
+                }
+                .userName {
+                    display: inline;
+                    padding: 3vh;
+                    transition: .3 ease;
+                    &:after {
+                        @include border-bottom-expand;
+                    }
+                    &:hover:after {
+                        transform: scaleX(1);
+                    }
+                    input {
+                        @include general-font(2rem, $accent-color);
+                        padding: 4vh;
+                        border: none;
+                        background: none;
+                        outline: none;
+                    }
+                    //PLACEHOLDER COLORS!
+                    ::placeholder {
+                        color: $light-blue;
+                        opacity: 1;
+                    }
+                    :-ms-input-placeholder { 
+                        color: $accent-orange;
+                    }
+                    :-ms-input-placeholder {
+                         color: $accent-orange;
+                    }//PLACEHOLDER COLORS!
+                }
+            }//.welcomeWrapper
+    
+            #errorDiv {
+                .errorMessage {
+                    width: 50vw;
+                    padding: 2rem;
+                    margin: 0 auto;
+                    @include general-font(1.1rem, $error-red);
+                    background: rgba(255, 255, 255, 0.5);
+                }
             }
-            .userName {
-                display: inline;
-                padding: 3vh;
-                transition: .3 ease;
+           
+            button {
+                @include general-font(1.5rem, $accent-color);
+                @include general-button(1.5rem);
+                margin-top: 4vh;
                 &:after {
                     @include border-bottom-expand;
                 }
                 &:hover:after {
                     transform: scaleX(1);
                 }
-                input {
-                    @include general-font(2rem, $accent-color);
-                    padding: 2vh;
-                    border: none;
-                    background: none;
-                    outline: none;
+            }//button
+        }//.startPageWrapper START PAGE ENDDS HERE
+    
+        //BOOKING STARTS HERE
+        .bookPageWrapper {
+            background-color: $light-pink;
+            nav {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 7vw;
                 }
-                //PLACEHOLDER COLORS!
-                ::placeholder {
-                    color: $blue;
-                    opacity: 1;
-                }
-                :-ms-input-placeholder { 
-                    color: $accent-orange;
-                }
-                :-ms-input-placeholder {
-                     color: $accent-orange;
-                }//PLACEHOLDER COLORS!
-            }
-        }//.welcomeWrapper
-
-        #errorDiv {
-            .errorMessage {
-                width: 50vw;
-                padding: 2rem;
-                margin: 0 auto;
-                @include general-font(1.1rem, $error-red);
-                background: rgba(255, 255, 255, 0.5);
             }
         }
-       
-        button {
-            @include general-font(1.5rem, $accent-color);
-            @include general-button(1.5rem);
-            margin-top: 4vh;
-            &:after {
-                @include border-bottom-expand;
-            }
-            &:hover:after {
-                transform: scaleX(1);
-            }
-        }//button
-    }//.startPageWrapper START PAGE ENDDS HERE
-
-    //BOOKING STARTS HERE
-    .bookPageWrapper {
-        background-color: $light-pink;
-        nav {
-            display: flex;
-            align-items: center;
-            img {
-                width: 7vw;
-            }
-        }
+        //BOOKING ENDS HERE
     }
-    //BOOKING ENDS HERE
 }//BODY
