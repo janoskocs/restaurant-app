@@ -69,7 +69,7 @@ function datePickPage() {
     datePickPage += "<option value=\"9\">October</option><option value=\"10\">November</option><option value=\"11\">December</option></select>";
     datePickPage += "<select id=\"days\"><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option><option value=\"11\">11</option><option value=\"12\">12</option><option value=\"13\">13</option><option value=\"14\">14</option><option value=\"15\">15</option><option value=\"16\">16</option>";
     datePickPage += "<option value=\"17\">17</option><option value=\"18\">18</option><option value=\"19\">19</option><option value=\"20\">20</option><option value=\"21\">21</option><option value=\"22\">22</option><option value=\"23\">23</option><option value=\"24\">24</option><option value=\"25\">25</option><option value=\"26\">26</option><option value=\"27\">27</option><option value=\"28\">28</option><option value=\"29\">29</option><option value=\"30\">30</option><option value=\"31\">31</option></select>";
-    datePickPage += "<select id=\"years\"><option value=\2018\">2018</option><option value=\"2019\">2019</option></select>";
+    datePickPage += "<select id=\"years\"><option value=\"2018\">2018</option><option value=\"2019\">2019</option></select>";
     datePickPage += "<input id=\"dateCheckBtn\" type=\"button\" value=\"Check date!\" onclick=\"dateCompare();\"></div><div id=\"errorDiv\"></div>";
     datePickPage += "</div><button onclick=\"bookFirstPage();\">&#x2190; Change the amount of seats</button><button onclick=\"dateCompare();\">Proceed to the next step &#x2192;</button><div class=\"steps\">";
     datePickPage += "<p>&#x278A;</p><p>&#x2777;</p><p>&#x2782;</p><p>&#x2783;</p><p>&#x2784;</p><p>&#x2785;</p>";
@@ -77,4 +77,42 @@ function datePickPage() {
     render(datePickPage);
 }
 
+function dateFunction() {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth();
+    let yyyy = today.getFullYear();
+
+    return today;
+}
+
+function bookedDate() {
+    let month = selector("#months");    
+    let selectedMonth = month.value;
+    
+    let day = selector("#days");
+    let selectedDay = day.value;
+
+    let year = selector("#years");
+    let selectedYear = year.value;
+    let wholeDate = new Date();
+    wholeDate.setFullYear(selectedYear, selectedMonth, selectedDay);
+    return wholeDate;
+    
+}
+
+function dateCompare() {
+    if ( bookedDate() < dateFunction() ) {
+        selector("#dateCheckBtn").value = "Check date!";
+        selector("#dateCheckBtn").style.background = "#d86337";
+        selector("#errorDiv").innerHTML ="<p class=\"errorMessage\">Sorry, it seems you have picked an earlier date than today.</p>";
+
+    } else {
+        userSetting["bookedDate"] = bookedDate(); //SET BOOKED DATE IN JS OBJECT
+        selector("#errorDiv").innerHTML = "";
+        selector("#dateCheckBtn").style.background = "lightgreen";
+        selector("#dateCheckBtn").value = " OK! ";
+    }
+    
+}
 // DATE PICKER PAGE ENDS HERE
