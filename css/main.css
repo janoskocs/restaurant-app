@@ -5,14 +5,12 @@
 }
 
 body {
-  overflow: hidden;
+  background: url("../img/hero1280gradient.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body #appFrame .startPageWrapper {
-  background: linear-gradient(rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), url("../img/hero1280.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
   text-align: center;
 }
 
@@ -42,6 +40,26 @@ body #appFrame .startPageWrapper .welcomeWrapper p {
   color: #fff;
   padding: 1vh;
   text-shadow: 0px 2px 20px #d86337;
+}
+
+body #appFrame .startPageWrapper .welcomeWrapper #foodPicker {
+  display: flex;
+  flex-direction: column;
+}
+
+body #appFrame .startPageWrapper .welcomeWrapper #foodPicker input {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  background: #19628d;
+  outline: none;
+  border: none;
+}
+
+body #appFrame .startPageWrapper .welcomeWrapper #foodPicker input:hover {
+  box-shadow: 0px 0px 10px #d86337;
 }
 
 body #appFrame .startPageWrapper .welcomeWrapper .userName {
