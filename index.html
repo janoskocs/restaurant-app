@@ -17,7 +17,7 @@
                     <img src="img/logol.png" alt="Logo of Sunset Restaurant" draggable="false">
                     <p>You can pre-order our finest dishes so you don't have to wait until the food is prepared! Click on a dish to add to your order.</p>
                     <div id="foodPicker">
-                        <input type="button" value="Braised Leeks with Mozzarella">
+                        <input type="button" value="Braised Leeks with Mozzarella" onclick="foodAdder(1);">
                         <input type="button" value="Lamb Salad with Fregola">
                         <input type="button" value="Smoked Pork Jowl">
                         <input type="button" value="Scallop Sashimi">
@@ -25,9 +25,11 @@
                     </div>
                     <div id="errorDiv"></div>
                 </div>
-                <button onclick="render(welcome);">&#x2190; Star over</button>
-                <button onclick="setConfirmationPage();">&#x279A; No thanks, I'll pass &#x2798;</button>
-                <button onclick="setPaymentPage();">Review and finish! &#x2192;</button>
+                <div id="buttons">
+                    <button onclick="render(welcome);">&#x2190; Star over</button>
+                    <button onclick="setConfirmationPage();">&#x279A; No thanks, I'll pass &#x2798;    </button>
+                    <button onclick="setPaymentPage();">Review and finish! &#x2192;</button>
+                </div>
                 <div class="steps">
                     <p>&#x278A;</p>
                     <p>&#x2777;</p>

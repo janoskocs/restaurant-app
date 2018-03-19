@@ -17,7 +17,7 @@ welcome += "<div class=\"userName\">";
 welcome += "<input id=\"userNameInput\" type=\"text\" placeholder=\"May I take your name?\">";
 welcome += "</div></div>";
 welcome += "<div id=\"errorDiv\"></div>";
-welcome += "<button onclick=\"nameInput();\">Be seated! &#8594;</button>";
+welcome += "<div id=\"buttons\"><button onclick=\"nameInput();\">Be seated! &#8594;</button></div>";
 welcome += "</div>";
 // WELCOME PAGE ENDS HERE
 
@@ -47,8 +47,8 @@ function bookFirstPage () {
     tablesPage += "<input type=\"button\" value=\"4\" onclick=\"tableCounter(4);\">";
     tablesPage += "<input type=\"button\" id=\"customTable\" value=\"Custom\" onclick=\"tableCounterCustom();\">";
     tablesPage += "<div id=\"errorDiv\"></div></div></div>";
-    tablesPage += "<button onclick=\"render(welcome);\">&#x2190; Change my name</button>";
-    tablesPage += "<button onclick=\"datePickPage();\">Proceed to the next step &#x2192;</button><div class=\"steps\">";
+    tablesPage += "<div id=\"buttons\"><button onclick=\"render(welcome);\">&#x2190; Change my name</button>";
+    tablesPage += "<button onclick=\"datePickPage();\">Proceed to the next step &#x2192;</button></div><div class=\"steps\">";
     tablesPage += "<p>&#x278A;</p><!-- 1 ACTIVE --><p>&#x2781;</p><!-- 2 INACTIVE --><p>&#x2782;</p><!-- 3 INACTIVE --><p>&#x2783;</p><!-- 4 INACTIVE --><p>&#x2784;</p>";
     tablesPage += "</div></div></div>";
     render(tablesPage);
@@ -72,7 +72,7 @@ function datePickPage() {
     datePickPage += "<option value=\"17\">17</option><option value=\"18\">18</option><option value=\"19\">19</option><option value=\"20\">20</option><option value=\"21\">21</option><option value=\"22\">22</option><option value=\"23\">23</option><option value=\"24\">24</option><option value=\"25\">25</option><option value=\"26\">26</option><option value=\"27\">27</option><option value=\"28\">28</option><option value=\"29\">29</option><option value=\"30\">30</option><option value=\"31\">31</option></select>";
     datePickPage += "<select id=\"years\"><option value=\"2018\">2018</option><option value=\"2019\">2019</option></select>";
     datePickPage += "<input id=\"dateCheckBtn\" type=\"button\" value=\"Check date!\" onclick=\"dateCompare();\"></div><div id=\"errorDiv\"></div>";
-    datePickPage += "</div><button onclick=\"bookFirstPage();\">&#x2190; Change the amount of seats</button><button onclick=\"canProceed();\">Proceed to the next step &#x2192;</button><div class=\"steps\">";
+    datePickPage += "</div><div id=\"buttons\"><button onclick=\"bookFirstPage();\">&#x2190; Change the amount of seats</button><button onclick=\"canProceed();\">Proceed to the next step &#x2192;</button></div><div class=\"steps\">";
     datePickPage += "<p>&#x278A;</p><p>&#x2777;</p><p>&#x2782;</p><p>&#x2783;</p><p>&#x2784;</p>";
     datePickPage += "</div></div>";
     render(datePickPage);
@@ -138,8 +138,8 @@ function timePickPage () {
     timePickPage += "<option value=\"08\">08</option><option value=\"09\">09</option><option value=\"10\">10</option><option value=\"11\">11</option><option value=\"12\">12</option><option value=\"13\">13</option><option value=\"14\">14</option><option value=\"15\">15</option>";
     timePickPage += "<option value=\"16\">16</option><option value=\"17\">17</option><option value=\"18\">18</option><option value=\"19\">19</option><option value=\"20\">20</option></select>";
     timePickPage += "<select id=\"setTimeMins\"><option value=\"00\">00</option><option value=\"15\">15</option><option value=\"30\">30</option><option value=\"45\">45</option></select><div id=\"errorDiv\"></div></div></div>";
-    timePickPage += "<button onclick=\"render(welcome);\">&#x2190; Start over</button>";
-    timePickPage += "<button onclick=\"setOrder();\">Proceed to the next step &#x2192;</button><div class=\"steps\">";
+    timePickPage += "<div id=\"buttons\"><button onclick=\"render(welcome);\">&#x2190; Start over</button>";
+    timePickPage += "<button onclick=\"setOrder();\">Proceed to the next step &#x2192;</button></div><div class=\"steps\">";
     timePickPage += "<p>&#x278A;</p><p>&#x2777;</p><p>&#x2778;</p><p>&#x2783;</p><p>&#x2784;</p></div></div>";
     render(timePickPage);
 }
@@ -165,14 +165,16 @@ function setOrder() {
     setOrderPage += "<input type=\"button\" value=\"Scallop Sashimi\">";
     setOrderPage += "<input type=\"button\" value=\"Vegan Charcuterie\">";
     setOrderPage += "</div><div id=\"errorDiv\"></div>";
-    setOrderPage += "</div><button onclick=\"render(welcome);\">&#x2190; Star over</button>";
+    setOrderPage += "</div><div id=\"buttons\"><button onclick=\"render(welcome);\">&#x2190; Star over</button>";
     setOrderPage += "<button onclick=\"setConfirmationPage();\">&#x279A; No thanks, I'll pass &#x2798;</button>";
-    setOrderPage += "<button onclick=\"setPaymenPage();\">Proceed to the next step &#x2192;</button>";
+    setOrderPage += "<button onclick=\"setPaymenPage();\">Proceed to the next step &#x2192;</button></div>";
     setOrderPage += "<div class=\"steps\"><p>&#x278A;</p><p>&#x2777;</p><p>&#x278C;</p><p>&#x278D;</p><p>&#x2784;</p></div></div>";
     render(setOrderPage);
 }
 
-function foodAdder() {}
+function foodAdder(x) {
+    alert(x);
+}
 
 //SETORDERPAGE ENDS HERE
 

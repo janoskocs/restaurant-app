@@ -12,6 +12,10 @@ body {
 
 body #appFrame .startPageWrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 body #appFrame .startPageWrapper .welcomeWrapper {
