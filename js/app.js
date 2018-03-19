@@ -392,6 +392,11 @@ function confirmationPage() {
     confirmationHTML += "</div>";
     //CONFIRMATION BOX
 
+    confirmationHTML += "<div id=\"buttons\">";
+    confirmationHTML += "<a href=\"http://janoskocs.com\">janoskocs.com</a>";
+    confirmationHTML += "</div>";
+
+
     confirmationHTML += "<div class=\"steps\">";
     confirmationHTML += "<p>&#x278A;</p>";
     confirmationHTML += "<p>&#x2777;</p>";
@@ -399,7 +404,6 @@ function confirmationPage() {
     confirmationHTML += "<p>&#x278D;</p>";
     confirmationHTML += "<p>&#x278E;</p>";
     confirmationHTML += "</div>";
-    confirmationHTML += "";
 
     render(confirmationHTML);
 

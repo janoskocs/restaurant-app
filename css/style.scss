@@ -152,6 +152,10 @@ body {
                 @include general-font(1rem, $blue);
                 padding: 0;
             }
+            a {
+                @extend button;
+                text-decoration: none;
+            }
         }//.pageContainer
     }//#appFrame
 }//BODY

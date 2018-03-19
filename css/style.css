@@ -109,7 +109,7 @@ body #appFrame .pageContainer :-ms-input-placeholder {
   color: #228cda;
 }
 
-body #appFrame .pageContainer button {
+body #appFrame .pageContainer button, body #appFrame .pageContainer a {
   font-family: 'Righteous', sans-serif;
   font-size: 1.5rem;
   color: #fff;
@@ -120,7 +120,7 @@ body #appFrame .pageContainer button {
   margin-top: 4vh;
 }
 
-body #appFrame .pageContainer button:after {
+body #appFrame .pageContainer button:after, body #appFrame .pageContainer a:after {
   display: block;
   content: '';
   border-bottom: solid 2px #FF69B4;
@@ -128,7 +128,7 @@ body #appFrame .pageContainer button:after {
   transition: transform 250ms ease-in-out;
 }
 
-body #appFrame .pageContainer button:hover:after {
+body #appFrame .pageContainer button:hover:after, body #appFrame .pageContainer a:hover:after {
   transform: scaleX(1);
 }
 
@@ -187,5 +187,9 @@ body #appFrame .pageContainer #confirmBox {
   font-size: 1rem;
   color: #19628d;
   padding: 0;
+}
+
+body #appFrame .pageContainer a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
