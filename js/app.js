@@ -3,9 +3,9 @@ let userSetting = {
     name: "",
     seatCount: 0,
     bookedDate: "",
-    bookedTime: "",
-    orders: []
+    bookedTime: ""
 }; //VARIABLE THAT HOLDS INFO THROUGHOUT BOOKING PROCESS
+let orders = [];
 
 function selector(element) {
     return document.querySelector(element);
@@ -110,8 +110,8 @@ function seatCounterCustom() {
                 custom.style.backgroundColor = "lightgreen";
                 //CHECK IF ITS A NUMBER, RESET ERROBOX, ASSIGN VALUE TO OBJECT
             } else {
+                selector("#errorBox").innerHTML = "<p> " + custom.value + " is not a number!</p>";
                 selector("#errorBox").style.visibility = "visible";
-                selector("#errorBox").innerHTML = "<p> " + custom.value + " is not a number!</p>"
                 //ERROR HANDLER
             }
         }
@@ -129,6 +129,7 @@ function seatCounter(seatCount) {
 function canProceed() {
     if ( userSetting["seatCount"] === 0 ) {
         selector("#errorBox").innerHTML = "<p>Sorry, you must select at least one seat in order to continue.</p>";
+        selector("#errorBox").style.visibility = "visible";
     } else {
         selector("#errorBox").visibility = "hidden";
         //RESET ERROR BOX
@@ -211,23 +212,24 @@ function dateFunction() {
     let dd = today.getDate();
     let mm = today.getMonth();
     let yyyy = today.getFullYear();
-
     return today;
+    /*GET TODAYS DATE SO IT CAN BE COMPARED
+    WITH THE USERS INPUT*/
 }
 
 function bookedDate() {
     let month = selector("#months");    
     let selectedMonth = month.value;
-    
+    //GET MONTH
     let day = selector("#days");
     let selectedDay = day.value;
-
+    //GET DATE
     let year = selector("#years");
     let selectedYear = year.value;
+    //GET YEAR
     let wholeDate = new Date();
-    wholeDate.setFullYear(selectedYear, selectedMonth, selectedDay);
+    wholeDate.setFullYear(selectedYear, selectedMonth, selectedDay);//SET FULL YEAR SO IT CAN BE COMPARED
     return wholeDate;
-    
 }
 
 function dateCompare() {
@@ -237,7 +239,6 @@ function dateCompare() {
         selector("#dateCheckBtn").style.background = "#d86337";
         selector("#errorBox").innerHTML ="<p>Sorry, it seems you have picked an earlier date than today.</p>";
         return flag;
-
     } else {
         userSetting["bookedDate"] = bookedDate(); //SET BOOKED DATE IN JS OBJECT
         selector("#errorBox").innerHTML = "";
@@ -291,7 +292,7 @@ function timePickPage() {
     //ERROR BOX
 
     timePickPageHTML += "<div id=\"buttons\">";
-    timePickPageHTML += "\"><button onclick=\"namePage();\">&#x2190; Start over</button>";
+    timePickPageHTML += "<button onclick=\"namePage();\">&#x2190; Start over</button>";
     timePickPageHTML += "<button onclick=\"setTime();\">Proceed to the next step &#x2192;</button>";
     timePickPageHTML += "</div>";
     //NAVIGATION
@@ -324,5 +325,82 @@ function setTime() {
 //TIME PICK PAGE ENDS HERE
 
 function orderPickPage() {
-    let orderPickPageHTML = "";
+    let orderPickPageHTML = "<div class=\"pageContainer\">";
+
+    orderPickPageHTML += "<img src=\"img/logol.png\" alt=\"Logo of Sunset Restaurant\" draggable=\"false\">";
+
+    orderPickPageHTML += "<div id=\"header\"><h1>Sunset Restaurant</h1>";
+    orderPickPageHTML += "<p>Are you feeling hungry already <span id=\"customerName\">" + userSetting["name"] + "?</span> If you'd like, you can pre-order your meal so you won't have to wait!</p></div>";
+
+    orderPickPageHTML += "<div id=\"foodPicker\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Braised Leeks with Mozzarella+\" onclick=\"addFoodToObject(1);\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Lamb Salad with Fregola+\" onclick=\"addFoodToObject(2);\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Smoked Pork Jowl+\" onclick=\"addFoodToObject(3);\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Scallop Sashimi+\" onclick=\"addFoodToObject(4);\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Vegan Charcuterie+\" onclick=\"addFoodToObject(5);\">";
+    orderPickPageHTML += "</div>";
+    //FOOD LIST END
+
+    orderPickPageHTML += "<div id=\"errorBox\"></div>";
+
+    orderPickPageHTML += "<div id=\"buttons\">";
+    orderPickPageHTML += "<button onclick=\"namePage();\">&#x2190; Star over</button>";
+    orderPickPageHTML += "<button onclick=\"confirmationPage();\">&#x279A; No thanks, I'll pass &#x2798;</button>";
+    orderPickPageHTML += "<button onclick=\"confirmationPage();\">Review and finish &#x2192;</button>";
+    orderPickPageHTML += "</div>";
+    //NAVIGATION
+
+    orderPickPageHTML += "<div class=\"steps\">";
+    orderPickPageHTML += "<p>&#x278A;</p>";
+    orderPickPageHTML += "<p>&#x2777;</p>";
+    orderPickPageHTML += "<p>&#x278C;</p>";
+    orderPickPageHTML += "<p>&#x278D;</p>";
+    orderPickPageHTML += "<p>&#x2784;</p>";
+    orderPickPageHTML += "</div>";
+    //STEPS
+
+    orderPickPageHTML += "</div>";//PAGE CONTAINER END
+    render(orderPickPageHTML);
+}
+
+function addFoodToObject(food) {
+    orders.push(food);
+    
+    let nthChildSelector = "input:nth-child(" + food + ")";
+    selector(nthChildSelector).style.backgroundColor = "lightgreen";
+
+    //ADD FUNCTION TO REMOVE FOODS
+}
+
+//PRE-ORDER FOOD PAGE ENDS HERE
+
+function confirmationPage() {
+    let confirmationHTML = "<div class=\"pageContainer\">";
+
+    confirmationHTML += "<img src=\"img/logol.png\" alt=\"Logo of Sunset Restaurant\" draggable=\"false\">";
+    //LOGO
+
+    confirmationHTML += "<div id=\"header\"><h1>Thank you so much " + userSetting["name"] + " for booking! </h1>";
+    confirmationHTML += "<p>I hope you enjoyed this experience! My name was Sarah, your first ever online waitress!</p></div>";
+    //HEADER
+
+    confirmationHTML += "<div id=\"confirmBox\">";
+    confirmationHTML += "<p>Your name is <span id=\"customerName\">" + userSetting["name"] + "</span>.</p>";
+    confirmationHTML += "<p>You have booked " + userSetting["seatCount"] + " seat(s).</p>";
+    confirmationHTML += "You will be coming on " + userSetting["bookedDate"] + " at " + userSetting["bookedTime"] + ".</p>";
+    confirmationHTML += "Also, you have pre-ordered " + orders + ".</p>";
+    confirmationHTML += "</div>";
+    //CONFIRMATION BOX
+
+    confirmationHTML += "<div class=\"steps\">";
+    confirmationHTML += "<p>&#x278A;</p>";
+    confirmationHTML += "<p>&#x2777;</p>";
+    confirmationHTML += "<p>&#x278C;</p>";
+    confirmationHTML += "<p>&#x278D;</p>";
+    confirmationHTML += "<p>&#x278E;</p>";
+    confirmationHTML += "</div>";
+    confirmationHTML += "";
+
+    render(confirmationHTML);
+
 }

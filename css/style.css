@@ -10,15 +10,15 @@ body {
   background-size: cover;
 }
 
-body #appFrame #errorBox {
+body #appFrame #errorBox, body #appFrame .pageContainer #confirmBox {
   font-family: 'Righteous', sans-serif;
   font-size: 1.1rem;
   color: #cc0000;
   background: rgba(255, 255, 255, 0.5);
-  width: 40%;
-  height: 20%;
+  height: 20vh;
   padding: 2rem;
   text-align: center;
+  visibility: hidden;
 }
 
 body #appFrame .steps {
@@ -149,7 +149,7 @@ body #appFrame .pageContainer .tableCount input:hover, body #appFrame .pageConta
   box-shadow: 0 3px 7px #d98592;
 }
 
-body #appFrame .pageContainer #errorBox input {
+body #appFrame .pageContainer #errorBox input, body #appFrame .pageContainer #confirmBox input {
   border: none;
   background: none;
   padding: 1rem;
@@ -161,7 +161,31 @@ body #appFrame .pageContainer #errorBox input {
   background: rgba(25, 98, 141, 0.5);
 }
 
-body #appFrame .pageContainer #errorBox input:hover {
+body #appFrame .pageContainer #errorBox input:hover, body #appFrame .pageContainer #confirmBox input:hover {
   box-shadow: 0 3px 7px #d98592;
+}
+
+body #appFrame .pageContainer #foodPicker input {
+  border: none;
+  background: none;
+  padding: 1rem;
+  outline: none;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #19628d;
+  margin: 0.5rem;
+}
+
+body #appFrame .pageContainer #foodPicker input:hover {
+  box-shadow: 0 3px 7px #d98592;
+}
+
+body #appFrame .pageContainer #confirmBox {
+  visibility: visible;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1rem;
+  color: #19628d;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

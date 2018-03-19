@@ -16,11 +16,10 @@ body {
         #errorBox {
             @include general-font(1.1rem, $error-red);
             background: rgba(255, 255, 255, 0.5);
-            width: 40%;
-            height: 20%;
+            height: 20vh;
             padding: 2rem;
             text-align: center;
-            //visibility: hidden;
+            visibility: hidden;
         }//#errorBox
         .steps {
             display: flex;
@@ -131,6 +130,27 @@ body {
                         box-shadow: 0 3px 7px $light-pink; 
                     }
                 }
+            }//#errorBox on TIME PICK PAGE
+
+            #foodPicker {
+                input {
+                    @include general-button(1rem);
+                    @include general-font(1rem, $main-color);
+                    background-color: $blue;
+                    margin: 0.5rem;
+                    &:hover {
+                        box-shadow: 0 3px 7px $light-pink; 
+                    }
+                }
+            }
+
+            //CONFIRM BOX
+
+            #confirmBox {
+                @extend #errorBox;
+                visibility: visible;
+                @include general-font(1rem, $blue);
+                padding: 0;
             }
         }//.pageContainer
     }//#appFrame
