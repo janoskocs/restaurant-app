@@ -1,0 +1,137 @@
+@import "vars";
+@import "mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../img/hero1280gradient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    #appFrame {
+        //ERROR HANDLER
+        #errorBox {
+            @include general-font(1.1rem, $error-red);
+            background: rgba(255, 255, 255, 0.5);
+            width: 40%;
+            height: 20%;
+            padding: 2rem;
+            text-align: center;
+            //visibility: hidden;
+        }//#errorBox
+        .steps {
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            color: $main-color;
+            p {
+                margin: 1rem;
+            }
+        }//.steps
+        #customerName {
+            text-transform: capitalize;
+        }
+        .pageContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            overflow-y: auto;
+            height: 100vh;
+            text-align: center;
+            img {
+                width: 7rem;
+            }//SUNSET LOGO IMG
+            #header {
+                width: 85vw; //CONTAIN H1 AND P
+                h1 {
+                    @include main-font(3rem, $main-color);
+                }
+                p {
+                    @include general-font(2rem, $main-color);
+                    text-shadow: 0px 2px 20px $accent-orange;
+                }
+            }//#header
+            #customerNameInput {
+                display: inline;
+                padding: 1rem;
+                input {
+                    @include general-font(2rem, $accent-color);
+                    @include inputReset();
+                    padding: 4vh;
+                    transition: .3 ease;
+                }
+                &:after {
+                    @include border-bottom-expand;
+                }
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+            }
+            //PLACEHOLDER COLORS!
+            ::placeholder {
+                color: $light-blue;
+                opacity: 1;
+            }
+            :-ms-input-placeholder { 
+                color: $light-blue;
+            }
+            :-ms-input-placeholder {
+                 color: $light-blue;
+            }//PLACEHOLDER COLORS!
+            //TEXT INPUT
+
+            button {
+                @include general-font(1.5rem, $main-color);
+                @include general-button(1.5rem);
+                margin-top: 4vh;
+                &:after {
+                    @include border-bottom-expand;
+                }
+                &:hover:after {
+                    transform: scaleX(1);
+                }
+            }//GENERAL NAVIGATION BUTTON
+            
+
+            //PAGE SPECIFIC STYLES
+            //SEAT PICK PAGE
+
+            .tableCount {
+                input, select {
+                    @include general-font(1.5rem, $main-color);
+                    @include inputReset();
+                    padding: 4vh;
+                    background: rgba(25, 98, 141, 0.5);
+                    margin: 0.5rem;
+                    margin-bottom: 1rem;
+                    &:hover {
+                        box-shadow: 0 3px 7px $light-pink; 
+                    }
+                }//INPUT
+            }//.tableCount
+
+            //DATE PICK PAGE
+            .datePicker {
+                @extend .tableCount;
+            }
+
+            //TIME PICK PAGE 
+
+            #errorBox {
+                input {
+                    @include general-button(1rem);
+                    @include general-font(1rem, $main-color);
+                    margin: 0.5rem;
+                    background: rgba(25, 98, 141, 0.5);
+                    &:hover {
+                        box-shadow: 0 3px 7px $light-pink; 
+                    }
+                }
+            }
+        }//.pageContainer
+    }//#appFrame
+}//BODY

@@ -9,19 +9,28 @@
 }
 
 body {
-    background: 
-        //linear-gradient( rgba(25, 98, 141, 0.8), rgba(242, 67, 100, 0.8)), 
-        url('../img/hero1280gradient.jpg');
+    background: url('../img/hero1280gradient.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    
     #appFrame {
-        .startPageWrapper {
+        //ERROR HANDLER
+        #errorBox {
+            @include general-font(1.1rem, $error-red);
+            background: rgba(255, 255, 255, 0.5);
+            width: 40vw;
+            margin: 1rem;
+            padding: 1rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pageContainer {
             text-align: center;
             display: flex;
             flex-direction: column;
-            height: 100vh;
             justify-content: space-between;
+            height: 100vh;
+            overflow-y: auto;
+            
             .welcomeWrapper {
                 display: flex;
                 flex-direction: column;
@@ -200,3 +209,13 @@ body {
         //BOOKING ENDS HERE
     }
 }//BODY
+
+@media screen and (max-width: 800px) {
+    body {
+        #appFrame {
+            .startPageWrapper{
+                height: auto;
+            }
+        }
+    }
+}

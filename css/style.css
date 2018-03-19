@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/hero1280gradient.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body #appFrame #errorBox {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.1rem;
+  color: #cc0000;
+  background: rgba(255, 255, 255, 0.5);
+  width: 40%;
+  height: 20%;
+  padding: 2rem;
+  text-align: center;
+}
+
+body #appFrame .steps {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+body #appFrame .steps p {
+  margin: 1rem;
+}
+
+body #appFrame #customerName {
+  text-transform: capitalize;
+}
+
+body #appFrame .pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: auto;
+  height: 100vh;
+  text-align: center;
+}
+
+body #appFrame .pageContainer img {
+  width: 7rem;
+}
+
+body #appFrame .pageContainer #header {
+  width: 85vw;
+}
+
+body #appFrame .pageContainer #header h1 {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+body #appFrame .pageContainer #header p {
+  font-family: 'Righteous', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+body #appFrame .pageContainer #customerNameInput {
+  display: inline;
+  padding: 1rem;
+}
+
+body #appFrame .pageContainer #customerNameInput input {
+  font-family: 'Righteous', sans-serif;
+  font-size: 2rem;
+  color: #FF69B4;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 4vh;
+  transition: .3 ease;
+}
+
+body #appFrame .pageContainer #customerNameInput:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #FF69B4;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+body #appFrame .pageContainer #customerNameInput:hover:after {
+  transform: scaleX(1);
+}
+
+body #appFrame .pageContainer ::placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+body #appFrame .pageContainer :-ms-input-placeholder {
+  color: #228cda;
+}
+
+body #appFrame .pageContainer :-ms-input-placeholder {
+  color: #228cda;
+}
+
+body #appFrame .pageContainer button {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  border: none;
+  background: none;
+  padding: 1.5rem;
+  outline: none;
+  margin-top: 4vh;
+}
+
+body #appFrame .pageContainer button:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #FF69B4;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+body #appFrame .pageContainer button:hover:after {
+  transform: scaleX(1);
+}
+
+body #appFrame .pageContainer .tableCount input, body #appFrame .pageContainer .datePicker input, body #appFrame .pageContainer .tableCount select, body #appFrame .pageContainer .datePicker select {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 4vh;
+  background: rgba(25, 98, 141, 0.5);
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+body #appFrame .pageContainer .tableCount input:hover, body #appFrame .pageContainer .datePicker input:hover, body #appFrame .pageContainer .tableCount select:hover, body #appFrame .pageContainer .datePicker select:hover {
+  box-shadow: 0 3px 7px #d98592;
+}
+
+body #appFrame .pageContainer #errorBox input {
+  border: none;
+  background: none;
+  padding: 1rem;
+  outline: none;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0.5rem;
+  background: rgba(25, 98, 141, 0.5);
+}
+
+body #appFrame .pageContainer #errorBox input:hover {
+  box-shadow: 0 3px 7px #d98592;
+}
+/*# sourceMappingURL=style.css.map */

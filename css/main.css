@@ -10,34 +10,47 @@ body {
   background-size: cover;
 }
 
-body #appFrame .startPageWrapper {
+body #appFrame #errorBox {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.1rem;
+  color: #cc0000;
+  background: rgba(255, 255, 255, 0.5);
+  width: 40vw;
+  margin: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body #appFrame .pageContainer {
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-between;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper {
+body #appFrame .pageContainer .welcomeWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper img {
+body #appFrame .pageContainer .welcomeWrapper img {
   width: 7rem;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper h1 {
+body #appFrame .pageContainer .welcomeWrapper h1 {
   font-family: 'Permanent Marker', sans-serif;
   font-size: 3.4rem;
   color: #fff;
-  text-align: center;
+  text-shadow: 0px 2px 20px #d86337;
   padding-top: 5vh;
   text-shadow: 0px 2px 20px #d86337;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper p {
+body #appFrame .pageContainer .welcomeWrapper p {
   width: 75vw;
   font-family: 'Righteous', sans-serif;
   font-size: 2rem;
@@ -46,12 +59,12 @@ body #appFrame .startPageWrapper .welcomeWrapper p {
   text-shadow: 0px 2px 20px #d86337;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper #foodPicker {
+body #appFrame .pageContainer .welcomeWrapper #foodPicker {
   display: flex;
   flex-direction: column;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper #foodPicker input {
+body #appFrame .pageContainer .welcomeWrapper #foodPicker input {
   font-family: 'Righteous', sans-serif;
   font-size: 1.2rem;
   color: #fff;
@@ -62,17 +75,17 @@ body #appFrame .startPageWrapper .welcomeWrapper #foodPicker input {
   border: none;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper #foodPicker input:hover {
+body #appFrame .pageContainer .welcomeWrapper #foodPicker input:hover {
   box-shadow: 0px 0px 10px #d86337;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName {
+body #appFrame .pageContainer .welcomeWrapper .userName {
   display: inline;
   padding: 3vh;
   transition: .3 ease;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName:after {
+body #appFrame .pageContainer .welcomeWrapper .userName:after {
   display: block;
   content: '';
   border-bottom: solid 2px #FF69B4;
@@ -80,11 +93,11 @@ body #appFrame .startPageWrapper .welcomeWrapper .userName:after {
   transition: transform 250ms ease-in-out;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName:hover:after {
+body #appFrame .pageContainer .welcomeWrapper .userName:hover:after {
   transform: scaleX(1);
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName input {
+body #appFrame .pageContainer .welcomeWrapper .userName input {
   font-family: 'Righteous', sans-serif;
   font-size: 2rem;
   color: #FF69B4;
@@ -94,24 +107,24 @@ body #appFrame .startPageWrapper .welcomeWrapper .userName input {
   outline: none;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName ::placeholder {
+body #appFrame .pageContainer .welcomeWrapper .userName ::placeholder {
   color: #228cda;
   opacity: 1;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+body #appFrame .pageContainer .welcomeWrapper .userName :-ms-input-placeholder {
   color: #228cda;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .userName :-ms-input-placeholder {
+body #appFrame .pageContainer .welcomeWrapper .userName :-ms-input-placeholder {
   color: #228cda;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .datePicker {
+body #appFrame .pageContainer .welcomeWrapper .datePicker {
   display: flex;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .datePicker select {
+body #appFrame .pageContainer .welcomeWrapper .datePicker select {
   font-family: 'Righteous', sans-serif;
   font-size: 1.6rem;
   color: #fff;
@@ -121,7 +134,7 @@ body #appFrame .startPageWrapper .welcomeWrapper .datePicker select {
   padding: 2vh;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .datePicker input {
+body #appFrame .pageContainer .welcomeWrapper .datePicker input {
   font-family: 'Righteous', sans-serif;
   font-size: 1rem;
   color: #fff;
@@ -130,15 +143,15 @@ body #appFrame .startPageWrapper .welcomeWrapper .datePicker input {
   border: none;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper .datePicker input:hover {
+body #appFrame .pageContainer .welcomeWrapper .datePicker input:hover {
   box-shadow: 0px 2px 20px #d86337;
 }
 
-body #appFrame .startPageWrapper .welcomeWrapper #customerName {
+body #appFrame .pageContainer .welcomeWrapper #customerName {
   text-transform: capitalize;
 }
 
-body #appFrame .startPageWrapper #errorDiv .errorMessage {
+body #appFrame .pageContainer #errorDiv .errorMessage {
   width: 40vw;
   margin: 1rem;
   padding: 1rem;
@@ -149,7 +162,7 @@ body #appFrame .startPageWrapper #errorDiv .errorMessage {
   background: rgba(255, 255, 255, 0.5);
 }
 
-body #appFrame .startPageWrapper button {
+body #appFrame .pageContainer button {
   font-family: 'Righteous', sans-serif;
   font-size: 1.5rem;
   color: #fff;
@@ -157,11 +170,10 @@ body #appFrame .startPageWrapper button {
   background: none;
   padding: 1.5rem;
   outline: none;
-  text-align: center;
   margin-top: 4vh;
 }
 
-body #appFrame .startPageWrapper button:after {
+body #appFrame .pageContainer button:after {
   display: block;
   content: '';
   border-bottom: solid 2px #FF69B4;
@@ -169,22 +181,22 @@ body #appFrame .startPageWrapper button:after {
   transition: transform 250ms ease-in-out;
 }
 
-body #appFrame .startPageWrapper button:hover:after {
+body #appFrame .pageContainer button:hover:after {
   transform: scaleX(1);
 }
 
-body #appFrame .startPageWrapper .steps {
+body #appFrame .pageContainer .steps {
   display: flex;
   justify-content: center;
   font-size: 2rem;
   color: #fff;
 }
 
-body #appFrame .startPageWrapper .steps p {
+body #appFrame .pageContainer .steps p {
   margin: 1rem;
 }
 
-body #appFrame .startPageWrapper .tableCount input {
+body #appFrame .pageContainer .tableCount input {
   font-family: 'Righteous', sans-serif;
   font-size: 1.5rem;
   color: #fff;
@@ -196,11 +208,11 @@ body #appFrame .startPageWrapper .tableCount input {
   margin-bottom: 1rem;
 }
 
-body #appFrame .startPageWrapper .tableCount input:hover {
+body #appFrame .pageContainer .tableCount input:hover {
   box-shadow: 0 3px 7px #d98592;
 }
 
-body #appFrame .startPageWrapper .tableCount input #errorDiv .errorMessage {
+body #appFrame .pageContainer .tableCount input #errorDiv .errorMessage {
   width: 20vw;
   padding: 0.2rem;
   margin: 0 auto;
@@ -210,16 +222,16 @@ body #appFrame .startPageWrapper .tableCount input #errorDiv .errorMessage {
   background: rgba(255, 255, 255, 0.5);
 }
 
-body #appFrame .startPageWrapper .tableCount ::placeholder {
+body #appFrame .pageContainer .tableCount ::placeholder {
   color: #228cda;
   opacity: 1;
 }
 
-body #appFrame .startPageWrapper .tableCount :-ms-input-placeholder {
+body #appFrame .pageContainer .tableCount :-ms-input-placeholder {
   color: #228cda;
 }
 
-body #appFrame .startPageWrapper .tableCount :-ms-input-placeholder {
+body #appFrame .pageContainer .tableCount :-ms-input-placeholder {
   color: #228cda;
 }
 
@@ -234,5 +246,11 @@ body #appFrame .bookPageWrapper nav {
 
 body #appFrame .bookPageWrapper nav img {
   width: 7vw;
+}
+
+@media screen and (max-width: 800px) {
+  body #appFrame .startPageWrapper {
+    height: auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */
