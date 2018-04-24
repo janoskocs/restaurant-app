@@ -12,11 +12,13 @@ function selector(element) {
 } //DOM SELECTOR FUNCTION
 
 function render(htmlMarkup) {
+    $('#appFrame').hide();
     let appFrame = selector("#appFrame").innerHTML = htmlMarkup;
+    $('#appFrame').fadeIn(1000);
 } //DOM PRINTER FUNCTION
 
 //PAGE BUILDER STARTS HERE
-function namePage() { 
+function namePage() {
     let namePageHTML = "<div class=\"pageContainer\">";
 
     namePageHTML += "<img src=\"img/logol.png\" alt=\"Logo of Sunset Restaurant\" draggable=\"false\">";
@@ -31,6 +33,7 @@ function namePage() {
     namePageHTML += "<button onclick=\"nameInput();\">Be seated! &#8594;</button>";
     //BUTTON
     namePageHTML += "</div>"; //.pageContainer END DIV
+    
     render(namePageHTML);
 }
 namePage();
@@ -123,6 +126,7 @@ function seatCounter(seatCount) {
     //ASSIGN SEAT COUNT TO OBJECT
     let tableCountBtn = "input:nth-child(" + seatCount + ")";
     selector(tableCountBtn).style.backgroundColor = "lightgreen";
+    //SELECTED BUTTON TO GREEN
     //REFACTOR THIS!
 }
 
@@ -190,9 +194,9 @@ function datePickPage() {
     //ERROR BOX
 
     datePickPageHTML += "<div id=\"buttons\">";
-    datePickPageHTML += "\"><button onclick=\"seatPage();\">&#x2190; Change the amount of seats</button>";
+    datePickPageHTML += "<button onclick=\"seatPage();\">&#x2190; Change the amount of seats</button>";
     datePickPageHTML += "<button onclick=\"canProceedToTime();\">Proceed to the next step &#x2192;</button>";
-    datePickPageHTML += "></div>";
+    datePickPageHTML += "</div>";
     //NAVIGATION BUTTONS
 
     datePickPageHTML += "<div class=\"steps\">";
@@ -233,19 +237,24 @@ function bookedDate() {
 }
 
 function dateCompare() {
-    let flag = false;
+
     if ( bookedDate() < dateFunction() ) {
         selector("#dateCheckBtn").value = "Check date!";
         selector("#dateCheckBtn").style.background = "#d86337";
+        selector("#errorBox").style.visibility = "visible";
         selector("#errorBox").innerHTML ="<p>Sorry, it seems you have picked an earlier date than today.</p>";
-        return flag;
+    
     } else {
-        userSetting["bookedDate"] = bookedDate(); //SET BOOKED DATE IN JS OBJECT
+        let userBookedDate = bookedDate();
+        let dd = userBookedDate.getDate();
+        let mm = userBookedDate.getMonth();
+        let yyyy = userBookedDate.getFullYear();
+
+        userSetting["bookedDate"] = dd + ", " + mm + ", " + yyyy; //SET BOOKED DATE IN JS OBJECT
+
         selector("#errorBox").innerHTML = "";
         selector("#dateCheckBtn").style.background = "lightgreen";
         selector("#dateCheckBtn").value = " OK! ";
-        flag = true;
-        return flag;
     }
 }
 

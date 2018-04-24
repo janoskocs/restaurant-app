@@ -159,3 +159,29 @@ body {
         }//.pageContainer
     }//#appFrame
 }//BODY
+
+@media screen and (max-width: 480px) {
+    body {
+        #appFrame {
+            .pageContainer {
+                #customerNameInput {
+                    padding: 0;
+                    #userNameInput {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 560px) {
+    body {
+        #appFrame {
+            .pageContainer {
+                #errorBox {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
