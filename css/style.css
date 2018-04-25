@@ -149,6 +149,10 @@ body #appFrame .pageContainer .tableCount input:hover, body #appFrame .pageConta
   box-shadow: 0 3px 7px #d98592;
 }
 
+body #appFrame .pageContainer .tableCount .seatBtn, body #appFrame .pageContainer .datePicker .seatBtn {
+  padding: 1rem;
+}
+
 body #appFrame .pageContainer #errorBox input, body #appFrame .pageContainer #confirmBox input {
   border: none;
   background: none;

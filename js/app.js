@@ -7,6 +7,7 @@ let userSetting = {
 }; //VARIABLE THAT HOLDS INFO THROUGHOUT BOOKING PROCESS
 let orders = [];
 
+
 function selector(element) {
     return document.querySelector(element);
 } //DOM SELECTOR FUNCTION
@@ -66,10 +67,7 @@ function seatPage() {
 
     seatPageHTML += "<div class=\"tableCount\">";
 
-    seatPageHTML += "<input type=\"button\" value=\"1\" onclick=\"seatCounter(1);\">";
-    seatPageHTML += "<input type=\"button\" value=\"2\" onclick=\"seatCounter(2);\">";
-    seatPageHTML += "<input type=\"button\" value=\"3\" onclick=\"seatCounter(3);\">";
-    seatPageHTML += "<input type=\"button\" id=\"customCount\" value=\"Custom\" onclick=\"seatCounterCustom();\">";
+    seatPageHTML += "<input type=\"button\" id=\"customCount\" value=\"Click here to enter the number of seats you'd like to book.\" onclick=\"seatCounterCustom();\">";
 
     seatPageHTML += "</div>";
     //TABLE COUNT BUTTONS
@@ -98,6 +96,7 @@ function seatPage() {
     render(seatPageHTML);
 }
 
+
 function seatCounterCustom() {
     let custom = selector("#customCount");
     custom.setAttribute("value", "");
@@ -107,6 +106,7 @@ function seatCounterCustom() {
     custom.addEventListener('mouseout', function() { 
         if (custom.value !== "") {
             let customNumber = parseInt(custom.value);
+            selector("#errorBox").innerHTML = "<p>Looks like the field is empty.</p>";
             if (!isNaN(customNumber)) {
                 selector("#errorBox").style.visibility = "hidden"; // RESET ERROR BOX
                 userSetting["seatCount"] = custom.value;
@@ -120,7 +120,7 @@ function seatCounterCustom() {
         }
      }, false);
 }
-
+/*
 function seatCounter(seatCount) {
     userSetting["seatCount"] = seatCount;
     //ASSIGN SEAT COUNT TO OBJECT
@@ -129,6 +129,7 @@ function seatCounter(seatCount) {
     //SELECTED BUTTON TO GREEN
     //REFACTOR THIS!
 }
+*/
 
 function canProceed() {
     if ( userSetting["seatCount"] === 0 ) {
@@ -326,7 +327,7 @@ function setTime() {
     userSetting["bookedTime"] = setTime;
     //ASSIGN TIME TO THE OBJECT
     let questionBox = selector("#errorBox");
-    questionBox.innerHTML = "Is " + userSetting["bookedTime"] + " good for you?<input type=\"button\" value=\"Yes\" onclick=\"orderPickPage();\"><input type=\"button\" value=\"Check the time again!\" onclick=\"setTime();\">"; //GENERATE QUESTION IN ERROR BOX
+    questionBox.innerHTML = "Is " + userSetting["bookedTime"] + " good for you?<input type=\"button\" value=\"Yes\" onclick=\"orderPickPage();\"><input type=\"button\" value=\"Change the time\" onclick=\"setTime();\">"; //GENERATE QUESTION IN ERROR BOX
     questionBox.style.color = "#19628d";
     questionBox.style.visibility = "visible";
 }
@@ -342,11 +343,11 @@ function orderPickPage() {
     orderPickPageHTML += "<p>Are you feeling hungry already <span id=\"customerName\">" + userSetting["name"] + "?</span> If you'd like, you can pre-order your meal so you won't have to wait!</p></div>";
 
     orderPickPageHTML += "<div id=\"foodPicker\">";
-    orderPickPageHTML += "<input type=\"button\" value=\"+Braised Leeks with Mozzarella+\" onclick=\"addFoodToObject(1);\">";
-    orderPickPageHTML += "<input type=\"button\" value=\"+Lamb Salad with Fregola+\" onclick=\"addFoodToObject(2);\">";
-    orderPickPageHTML += "<input type=\"button\" value=\"+Smoked Pork Jowl+\" onclick=\"addFoodToObject(3);\">";
-    orderPickPageHTML += "<input type=\"button\" value=\"+Scallop Sashimi+\" onclick=\"addFoodToObject(4);\">";
-    orderPickPageHTML += "<input type=\"button\" value=\"+Vegan Charcuterie+\" onclick=\"addFoodToObject(5);\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Braised Leeks with Mozzarella+\" onclick=\"addFoodToObject(1, 'Braised Leeks with Mozzarella')\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Lamb Salad with Fregola+\" onclick=\"addFoodToObject(2, 'Lamb Salad with Fregola');\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Smoked Pork Jowl+\" onclick=\"addFoodToObject(3, 'Smoked Pork Jowl');\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Scallop Sashimi+\" onclick=\"addFoodToObject(4, 'Scallop Sashimi');\">";
+    orderPickPageHTML += "<input type=\"button\" value=\"+Vegan Charcuterie+\" onclick=\"addFoodToObject(5, 'Vegan Charcuterie');\">";
     orderPickPageHTML += "</div>";
     //FOOD LIST END
 
@@ -372,12 +373,14 @@ function orderPickPage() {
     render(orderPickPageHTML);
 }
 
-function addFoodToObject(food) {
-    orders.push(food);
+function addFoodToObject(food, foodName) {
+    let ordersCount = [];
+    ordersCount.push(food);
+    orders.push(foodName);
     
     let nthChildSelector = "input:nth-child(" + food + ")";
     selector(nthChildSelector).style.backgroundColor = "lightgreen";
-
+    
     //ADD FUNCTION TO REMOVE FOODS
 }
 
@@ -397,7 +400,7 @@ function confirmationPage() {
     confirmationHTML += "<p>Your name is <span id=\"customerName\">" + userSetting["name"] + "</span>.</p>";
     confirmationHTML += "<p>You have booked " + userSetting["seatCount"] + " seat(s).</p>";
     confirmationHTML += "You will be coming on " + userSetting["bookedDate"] + " at " + userSetting["bookedTime"] + ".</p>";
-    confirmationHTML += "Also, you have pre-ordered " + orders + ".</p>";
+    confirmationHTML += "Also, you have pre-ordered " + orders.join(", ") + ".</p>";
     confirmationHTML += "</div>";
     //CONFIRMATION BOX
 
